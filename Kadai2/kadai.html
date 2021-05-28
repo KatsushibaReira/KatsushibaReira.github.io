@@ -85,7 +85,7 @@
     
     //角錐を作成
     var coneGeometry = new THREE.ConeGeometry(0.21,0.3,4);
-    var coneMaterial = new THREE.MeshPhongMaterial({color:0xffd700});
+    var coneMaterial = new THREE.MeshPhongMaterial({color:0xffd700,wireframe:true});
     var cone = new THREE.Mesh(coneGeometry,coneMaterial);
     cone.position.set(0,0.3,1.2);
     //scene.add(cone);
@@ -148,10 +148,10 @@
       box10.rotation.y += -0.01;
       box11.rotation.x += 0.02;
       box11.rotation.y += 0.02;
-      box12.rotation.x += -0.01;
-      box12.rotation.y += -0.01;
-      box13.rotation.x += 0.02;
-      box13.rotation.y += 0.02;
+      box12.rotation.x += 0.02;
+      box12.rotation.y += 0.02;
+      box13.rotation.x += -0.01;
+      box13.rotation.y += -0.01;
       cone.rotation.y += 0.01;
       all.rotation.y += 0.01;
     
