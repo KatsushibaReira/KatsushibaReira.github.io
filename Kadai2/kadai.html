@@ -32,39 +32,39 @@
     var geometry = new THREE.BoxGeometry(0.3, 0.3, 0.3);
     var material = new THREE.MeshPhongMaterial({ color: 0xffd700 });
     var box1 = new THREE.Mesh(geometry, material);
-    box1.position.set(-0.6,-0.6,1.8);
+    box1.position.set(-0.6,-0.9,1.8);
     //scene.add(box1);
     //
     var box2 = new THREE.Mesh(geometry, material);
-    box2.position.set(0,-0.6,1.8);
+    box2.position.set(0,-0.9,1.8);
     //scene.add(box2);
     //
     var box3 = new THREE.Mesh(geometry, material);
-    box3.position.set(0.6,-0.6,1.8);
+    box3.position.set(0.6,-0.9,1.8);
     //scene.add(box3);
     //
     var box4 = new THREE.Mesh(geometry, material);
-    box4.position.set(-0.6,-0.6,1.2);
+    box4.position.set(-0.6,-0.9,1.2);
     //scene.add(box4);
     //
     var box5 = new THREE.Mesh(geometry, material);
-    box5.position.set(0,-0.6,1.2);
+    box5.position.set(0,-0.9,1.2);
     //scene.add(box5);
     //
     var box6 = new THREE.Mesh(geometry, material);
-    box6.position.set(0.6,-0.6,1.2);
+    box6.position.set(0.6,-0.9,1.2);
     //scene.add(box6);
     //
     var box7= new THREE.Mesh(geometry, material);
-    box7.position.set(-0.6,-0.6,0.6);
+    box7.position.set(-0.6,-0.9,0.6);
     //scene.add(box7);
     //
     var box8 = new THREE.Mesh(geometry, material);
-    box8.position.set(0,-0.6,0.6);
+    box8.position.set(0,-0.9,0.6);
     //scene.add(box8);
     //
     var box9 = new THREE.Mesh(geometry, material);
-    box9.position.set(0.6,-0.6,0.6);
+    box9.position.set(0.6,-0.9,0.6);
     //scene.add(box9);
     //
     var box10 = new THREE.Mesh(geometry, material);
@@ -126,32 +126,33 @@
       requestAnimationFrame(update);
       
       // 箱を回転させる
-      //box1.rotation.x += 0.01;
-      //box1.rotation.y += 0.01;
-      //box2.rotation.x += -0.02;
-      //box2.rotation.y += -0.02;
-      //box3.rotation.x += 0.01;
-      //box3.rotation.y += 0.01;
-      //box4.rotation.x += -0.02;
-      //box4.rotation.y += -0.02;
-      //box5.rotation.x += -0.02;
-      //box5.rotation.y += -0.02;
-      //box6.rotation.x += -0.02;
-      //box6.rotation.y += -0.02;
-      //box7.rotation.x += -0.02;
-      //box7.rotation.y += -0.02;
-      //box8.rotation.x += -0.02;
-      //box8.rotation.y += -0.02;
-      //box9.rotation.x += -0.02;
-      //box9.rotation.y += -0.02;
-      //box10.rotation.x += -0.02;
-      //box10.rotation.y += -0.02;
-      //box11.rotation.x += -0.02;
-      //box11.rotation.y += -0.02;
-      //box12.rotation.x += -0.02;
-      //box12.rotation.y += -0.02;
-      //box13.rotation.x += -0.02;
-      //box13.rotation.y += -0.02;
+      box1.rotation.x += 0.01;
+      box1.rotation.y += 0.01;
+      box2.rotation.x += -0.02;
+      box2.rotation.y += -0.02;
+      box3.rotation.x += 0.01;
+      box3.rotation.y += 0.01;
+      box4.rotation.x += -0.02;
+      box4.rotation.y += -0.02;
+      box5.rotation.x += 0.01;
+      box5.rotation.y += 0.01;
+      box6.rotation.x += -0.02;
+      box6.rotation.y += -0.02;
+      box7.rotation.x += 0.01;
+      box7.rotation.y += 0.01;
+      box8.rotation.x += -0.02;
+      box8.rotation.y += -0.02;
+      box9.rotation.x += 0.01;
+      box9.rotation.y += 0.01;
+      box10.rotation.x += -0.02;
+      box10.rotation.y += -0.02;
+      box11.rotation.x += 0.01;
+      box11.rotation.y += 0.01;
+      box12.rotation.x += -0.02;
+      box12.rotation.y += -0.02;
+      box13.rotation.x += 0.01;
+      box13.rotation.y += 0.01;
+      cone.rotation.y += 0.01;
       all.rotation.x += 0.01;
       all.rotation.y += 0.01;
     
