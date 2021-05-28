@@ -29,7 +29,7 @@
     var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
     
     // 箱を作成
-    var geometry = new THREE.BoxGeometry(0.3, 0.3, 0.3);
+    var geometry = new THREE.BoxGeometry(0.4, 0.4, 0.4);
     var material = new THREE.MeshPhongMaterial({ color: 0xffd700 });
     var box1 = new THREE.Mesh(geometry, material);
     box1.position.set(-0.6,0.6,0);
@@ -83,9 +83,12 @@
     box13.position.set(0.3,-0.3,0.6);
     //scene.add(box13);
     //
-    var box14 = new THREE.Mesh(geometry, material);
-    box14.position.set(0,0,1.2);
-    //scene.add(box14);
+    
+    //角錐を作成
+    var coneGeometry = new THREE.ConeGeometry(0.5,1,5)
+    var cone = new THREE.Mesh(coneGeometry,coneMaterial);
+    cone.position.set(0,0,1.2);
+    //scene.add(cone);
     //
     
      //全体のオブジェクト
@@ -104,7 +107,7 @@
     all.add(box11); // 箱11を追加
     all.add(box12); // 箱12を追加
     all.add(box13); // 箱13を追加
-    all.add(box14); // 箱14を追加
+    all.add(cone); // 角錐14を追加
     all.position.set(0,0,-5);//箱1～14のグループの原点の位置
     scene.add(all); 
   
