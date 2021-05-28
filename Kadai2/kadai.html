@@ -34,6 +34,17 @@
     var box1 = new THREE.Mesh(geometry,material);
     box1.position.set(0.3,0,0);
     
+    //全体のオブジェクト
+    const all = new THREE.Group()
+    all.add(box1);
+    all.position.set(0,0,-5);
+    scene.add(all);
+    
+    /初回実行
+    var update = function() {
+      requestAnimationFrame(update);
+    
+    
     renderer.render(scene, camera);
     };
     update();
