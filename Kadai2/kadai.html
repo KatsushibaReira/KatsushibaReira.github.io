@@ -83,6 +83,13 @@
     box13.position.set(0.3,-0.3,0.6);
     //scene.add(box13);
     
+    //角錐を作成
+    var coneGeometry = new THREE.ConeGeometry(0.15,0.3,4);
+    var coneMaterial = new THREE.MeshPhongMaterial({color:0xffd700});
+    var cone = new THREE.Mesh(coneGeometry,coneMaterial);
+    cone.position.set(0,0,1.2);
+    //scene.add(cone);
+    
     //全体のオブジェクト
     //const all = new THREE.Object3D(); 
     const all = new THREE.Group()
@@ -99,15 +106,9 @@
     all.add(box11); // 箱11を追加
     all.add(box12); // 箱12を追加
     all.add(box13); // 箱13を追加
-    all.position.set(0,0,-5);//箱1～13のグループの原点の位置
+    all.add(cone); // 角錐を追加
+    all.position.set(0,0,-5);//グループの原点の位置
     scene.add(all);
-    
-    //角錐を作成
-    var coneGeometry = new THREE.ConeGeometry( 0.15, 0.3, 4);
-    var coneMaterial = new THREE.MeshPhongMaterial({color: 0xffd700});
-    var cone = new THREE.Mesh(coneGeometry,coneMaterial);
-    cone.position.set(0,0,1.2);
-    scene.add(cone);
   
     // 平行光源1
     var directionalLight1 = new THREE.DirectionalLight(0xffffff);
@@ -127,8 +128,12 @@
       // 箱を回転させる
       box1.rotation.x += 0.01;
       box1.rotation.y += 0.01;
-      box2.rotation.x += 0.02;
-      box2.rotation.y += 0.02;
+      box2.rotation.x += -0.02;
+      box2.rotation.y += -0.02;
+      box3.rotation.x += 0.01;
+      box3.rotation.y += 0.01;
+      box4.rotation.x += -0.02;
+      box4.rotation.y += -0.02;
       all.rotation.x += 0.01;
       all.rotation.y += 0.01;
     
