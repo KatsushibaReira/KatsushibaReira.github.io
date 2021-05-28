@@ -46,6 +46,15 @@
     var box4 = new THREE.Mesh(geometry, material);
     box4.position.set(-0.9,0,0);
     //scene.add(box4);
+    //
+    var box5 = new THREE.Mesh(geometry, material);
+    box5.position.set(0.5,0.3,0);
+    //scene.add(box5);
+    //
+    var box6 = new THREE.Mesh(geometry, material);
+    box6.position.set(-0.5,0.3,0);
+    //scene.add(box6);
+    //
 
      //全体のオブジェクト
     //const all = new THREE.Object3D(); 
@@ -54,7 +63,9 @@
     all.add(box2); // 箱2を追加 
     all.add(box3); // 箱3を追加 
     all.add(box4); // 箱4を追加 
-    all.position.set(0,0,-5);//箱1～4のグループの原点の位置
+    all.add(box5); // 箱5を追加
+    all.add(box6); // 箱6を追加
+    all.position.set(0,0,-5);//箱1～6のグループの原点の位置
     scene.add(all); 
   
     // 平行光源1
