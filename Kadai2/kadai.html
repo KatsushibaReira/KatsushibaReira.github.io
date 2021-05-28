@@ -97,14 +97,14 @@
     all.add(box4); // 箱4を追加 
     all.add(box5); // 箱5を追加
     all.add(box6); // 箱6を追加
-    all.add(box6); // 箱7を追加
-    all.add(box6); // 箱8を追加
-    all.add(box6); // 箱9を追加
-    all.add(box6); // 箱10を追加
-    all.add(box6); // 箱11を追加
-    all.add(box6); // 箱12を追加
-    all.add(box6); // 箱13を追加
-    all.add(box6); // 箱14を追加
+    all.add(box7); // 箱7を追加
+    all.add(box8); // 箱8を追加
+    all.add(box9); // 箱9を追加
+    all.add(box10); // 箱10を追加
+    all.add(box11); // 箱11を追加
+    all.add(box12); // 箱12を追加
+    all.add(box13); // 箱13を追加
+    all.add(box14); // 箱14を追加
     all.position.set(0,0,-5);//箱1～14のグループの原点の位置
     scene.add(all); 
   
@@ -118,12 +118,25 @@
     directionalLight2.position.set(-1, 1, 1);
     // シーンに追加
     scene.add(directionalLight2);
+    // 平行光源2
+        var directionalLight3 = new THREE.DirectionalLight(0xffffff);
+    directionalLight3.position.set(-1, 1, 1);
+    // シーンに追加
+    scene.add(directionalLight3);
   
     // 初回実行
     var update = function() {
       requestAnimationFrame(update);
   
       // 箱を回転させる
+      box1.rotation.x += 0.01;
+      box1.rotation.y += 0.01;
+      //box2.rotation.x += 0.01;
+      //box2.rotation.y += 0.01;
+      box3.rotation.x += 0.01;
+      box3.rotation.y += 0.01;
+      //box4.rotation.x += 0.01;
+      //box4.rotation.y += 0.01;
         all.rotation.x += 0.01;
         all.rotation.y += 0.01;
     
