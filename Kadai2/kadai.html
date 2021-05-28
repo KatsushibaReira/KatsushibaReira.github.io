@@ -85,7 +85,8 @@
     //
     
     //角錐を作成
-    var coneGeometry = new THREE.ConeGeometry(0.5,1,5)
+    var coneGeometry = new THREE.ConeGeometry(0.5,1,5);
+    var coneMaterial = new THREE.MeshphongMaterial({color: 0xffd700});
     var cone = new THREE.Mesh(coneGeometry,coneMaterial);
     cone.position.set(0,0,1.2);
     //scene.add(cone);
