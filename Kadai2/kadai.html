@@ -68,11 +68,11 @@
     //scene.add(box9);
     //
     var box10 = new THREE.Mesh(geometry, material);
-    box10.position.set(-0.3,-0.3,0.3);
+    box10.position.set(-0.3,-0.3,-0.3);
     //scene.add(box10);
     //
     var box11 = new THREE.Mesh(geometry, material);
-    box11.position.set(0.3,-0.3,0.3);
+    box11.position.set(0.3,-0.3,-0.3);
     //scene.add(box11);
     //
     var box12 = new THREE.Mesh(geometry, material);
@@ -84,7 +84,7 @@
     //scene.add(box13);
     
     //角錐を作成
-    var coneGeometry = new THREE.ConeGeometry(0.2,0.3,4);
+    var coneGeometry = new THREE.ConeGeometry(0.21,0.3,4);
     var coneMaterial = new THREE.MeshPhongMaterial({color:0xffd700});
     var cone = new THREE.Mesh(coneGeometry,coneMaterial);
     cone.position.set(0,0,1.2);
