@@ -64,19 +64,14 @@ var materials = [
 
   // 平行光源
   var directionalLight1 = new THREE.DirectionalLight(0xffffff);
-  directionalLight1.position.set(1, 1, 1);
+  directionalLight1.position.set(100, 100, 100);
   // シーンに追加
   scene.add(directionalLight1);
 
   var directionalLight2 = new THREE.DirectionalLight(0xffffff);
-  directionalLight2.position.set(-10, 1, 1);
+  directionalLight2.position.set(-1000, 100, 100);
   // シーンに追加
   scene.add(directionalLight2);
-
- var directionalLight3 = new THREE.DirectionalLight(0xffffff);
-  directionalLight3.position.set(1, -10, 1);
-  // シーンに追加
-  scene.add(directionalLight3);
      
      // helper
       const gridHelper = new THREE.GridHelper(200,50); // size, step
