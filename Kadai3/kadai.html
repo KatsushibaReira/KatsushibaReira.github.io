@@ -30,7 +30,7 @@
     var scene = new THREE.Scene();
   
     // カメラを作成(画角、縦横比、カメラからの距離前、後）
-    var camera = new THREE.PerspectiveCamera(45, width / height);
+    var camera = new THREE.PerspectiveCamera(45, width / height,1,1000);
 　  // カメラの座標
 　  camera.position.set(0,0,1000);
      
@@ -62,10 +62,10 @@
 
 
   // 箱を作成
-  var geometry = new THREE.BoxGeometry(10, 20, 5);
-  var material = new THREE.MeshPhongMaterial({ color: 0xffd700 });
-  var box = new THREE.Mesh(geometry, mat);
-  box.position.set(0,0,0);
+  var geometry = new THREE.BoxGeometry(1,2,0.5);
+  var box = new THREE.Mesh(geometry, material);
+  box.position.x = 1;
+  scene.add(box);
      
      tick();
         // 毎フレーム時に実行されるループイベントです
