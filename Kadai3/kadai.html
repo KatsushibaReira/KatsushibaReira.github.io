@@ -16,10 +16,9 @@
    // ページの読み込みを待つ
    window.addEventListener('load', init);
    
-   function init() {
+   var init = function() {
 
-    const width = 800,
-    const height = 600;
+    var width = 800,height = 600;
   
     // レンダラーを作成
     const renderer = new THREE.WebGLRenderer();
@@ -27,10 +26,10 @@
     document.body.appendChild(renderer.domElement);
   
     // シーンを作成
-    const scene = new THREE.Scene();
+    var scene = new THREE.Scene();
   
     // カメラを作成(画角、縦横比、カメラからの距離前、後）
-    const camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+    var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
 　  // カメラの座標
 　  camera.position.set(0,0,1000);
      
@@ -89,9 +88,6 @@ var materials = [
   // 初回実行
   var update = function() {
     requestAnimationFrame(update);
-
-    // シーンを回転させる
-   all.rotation.y += 0.01;
 
     renderer.render(scene, camera);
   };
