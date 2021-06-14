@@ -18,7 +18,7 @@
    
    var init = function() {
 
-    var width = 800,height = 600;
+    var width = 960,height = 540;
   
     // レンダラーを作成
     const renderer = new THREE.WebGLRenderer();
@@ -52,7 +52,7 @@ var materials = [
   // 箱を作成
   var geometry = new THREE.BoxGeometry(100, 200, 50);
   var box = new THREE.Mesh(geometry, material);
-  box.position.set(0,50,0);
+  scene.add(box);
 
  //全体のオブジェクト
 
@@ -69,7 +69,7 @@ var materials = [
   scene.add(directionalLight1);
 
   var directionalLight2 = new THREE.DirectionalLight(0xffffff);
-  directionalLight2.position.set(-1000, 100, 100);
+  directionalLight2.position.set(-100, 100, 100);
   // シーンに追加
   scene.add(directionalLight2);
      
