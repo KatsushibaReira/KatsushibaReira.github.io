@@ -64,14 +64,11 @@
   // 箱を作成
   var geometry = new THREE.BoxGeometry(100,200,50);
   var box1 = new THREE.Mesh(geometry, material);
-  box.position.x = 1;
-  scene.add(box);
+  box.position.set(0,0,0);
   var box2 = new THREE.Mesh(geometry, material);
-  box.position.x = 2;
-  scene.add(box);
+  box.position.set(1,1,1);
   var box3 = new THREE.Mesh(geometry, material);
-  box.position.x = 3;
-  scene.add(box);
+  box.position.set(2,2,2);
      
      tick();
         // 毎フレーム時に実行されるループイベントです
