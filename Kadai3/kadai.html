@@ -27,7 +27,7 @@
     var scene = new THREE.Scene();
   
       // カメラを作成(画角、縦横比、カメラからの距離前、後）
-      var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+      var camera = new THREE.PerspectiveCamera(45, width / height, 100, 1000);
 　  // カメラの座標
 　   camera.position.set( 0, 2, 3);
      camera.lookAt(new THREE.Vector3(0, 1, 0));
@@ -51,12 +51,12 @@ var materials = [
   // 箱を作成
   var geometry = new THREE.BoxGeometry(1, 2, 0.5);
   var box1 = new THREE.Mesh(geometry, material);
-  box1.position.set(1,0,1);
+  box1.position.set(0,1,1);
     
   // 箱を作成
   var geometry = new THREE.BoxGeometry(1.5, 3, 0.8);
   var box2 = new THREE.Mesh(geometry, material);
-  box2.position.set(2,0,2);
+  box2.position.set(0,2,2);
 
  //全体のオブジェクト
 
