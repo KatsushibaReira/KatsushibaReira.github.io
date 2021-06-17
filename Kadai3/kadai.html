@@ -57,12 +57,18 @@ var materials = [
   var geometry = new THREE.BoxGeometry(1.5, 3, 0.8);
   var box2 = new THREE.Mesh(geometry, material);
   box2.position.set(2,1.5,2);
+    
+  // 箱を作成
+  var geometry = new THREE.BoxGeometry(2.5, 5, 1.2);
+  var box3 = new THREE.Mesh(geometry, material);
+  box3.position.set(-4,2.5,-3);
 
  //全体のオブジェクト
 
  const all = new THREE.Group();
      all.add(box1);
      all.add(box2);
+     all.add(box3);
      all.position.set(0,0,-5);//全体グループの原点の位置
  scene.add(all); 
 
