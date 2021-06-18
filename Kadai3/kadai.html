@@ -40,7 +40,7 @@
 var materials1 = [
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bsl.png")}),
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bsr.png")}),
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img3.png")}),
+     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/imgbillue1.png")}),
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img4.png")}),
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bf.png")}),
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bb.png")}),
@@ -52,7 +52,7 @@ var materials1 = [
 var materials2 = [
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bsl.png")}),
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bsr.png")}),
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img3.png")}),
+     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/billue4.png")}),
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img4.png")}),
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bf2.png")}),
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bb2.png")}),
@@ -186,16 +186,21 @@ var materials7 = [
   directionalLight1.position.set(1, 1, 1);
   // シーンに追加
   scene.add(directionalLight1);
-
+  //平行光源2
   var directionalLight2 = new THREE.DirectionalLight(0xffffff);
   directionalLight2.position.set(-10, 1, 1);
   // シーンに追加
   scene.add(directionalLight2);
-
- var directionalLight3 = new THREE.DirectionalLight(0xffffff);
+  //平行光源3
+  var directionalLight3 = new THREE.DirectionalLight(0xffffff);
   directionalLight3.position.set(1, -10, 1);
   // シーンに追加
   scene.add(directionalLight3);
+  //平行光源4
+  var directionalLight4 = new THREE.DirectionalLight(0xffffff);
+  directionalLight4.position.set(1, 1, -10);
+  // シーンに追加
+  scene.add(directionalLight4);
 
   // 初回実行
   var update = function() {
