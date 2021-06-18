@@ -37,7 +37,7 @@
     const controls = new THREE.OrbitControls(camera,document.body);
 
 //6面分のテクスチャー読み込み
-var materials = [
+var materials1 = [
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bsl.png")}),
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bsr.png")}),
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img3.png")}),
@@ -46,7 +46,7 @@ var materials = [
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bb.png")}),
   ];
  
-   var material = new THREE.MeshFaceMaterial(materials); // マテリアルをセット
+   var material1 = new THREE.MeshFaceMaterial(materials1); // マテリアルをセット
     
  //6面分のテクスチャー読み込み
 var materials2 = [
@@ -57,13 +57,37 @@ var materials2 = [
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bf2.png")}),
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bb2.png")}),
   ];
+    
+    var material2 = new THREE.MeshFaceMaterial(materials2); // マテリアルをセット
+    
+  //6面分のテクスチャー読み込み
+var materials3 = [
+     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill1.png")}),
+     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill1.png")}),
+     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/billue1.png")}),
+     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img4.png")}),
+     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill1.png")}),
+     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill1.png")}),
+  ];
  
-   var material2 = new THREE.MeshFaceMaterial(materials2); // マテリアルをセット
+   var material3 = new THREE.MeshFaceMaterial(materials3); // マテリアルをセット
+    
+  //6面分のテクスチャー読み込み
+var materials4 = [
+     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill2.png")}),
+     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill2.png")}),
+     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/billue2.png")}),
+     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img4.png")}),
+     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill2.png")}),
+     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill2.png")}),
+  ];
+ 
+   var material4 = new THREE.MeshFaceMaterial(materials4); // マテリアルをセット
 
 
   // 箱を作成
   var geometry = new THREE.BoxGeometry(1.4, 1.8, 0.5);
-  var box1 = new THREE.Mesh(geometry, material);
+  var box1 = new THREE.Mesh(geometry, material1);
   box1.position.set(0,0.9,0);
     
   // 箱を作成
@@ -73,22 +97,22 @@ var materials2 = [
     
   // 箱を作成
   var geometry = new THREE.BoxGeometry(2.5, 5, 1.2);
-  var box3 = new THREE.Mesh(geometry, material);
+  var box3 = new THREE.Mesh(geometry, material3);
   box3.position.set(-4,2.5,5);
     
   // 箱を作成
   var geometry = new THREE.BoxGeometry(1.5, 3.6, 0.8);
-  var box4 = new THREE.Mesh(geometry, material);
+  var box4 = new THREE.Mesh(geometry, material4);
   box4.position.set(-4.4,1.8,3);
     
   // 箱を作成
   var geometry = new THREE.BoxGeometry(1.5, 6.2, 1.5);
-  var box5 = new THREE.Mesh(geometry, material);
+  var box5 = new THREE.Mesh(geometry, material1);
   box5.position.set(-2,3.1,-1);
     
   // 箱を作成
   var geometry = new THREE.BoxGeometry(1.5, 6.2, 1.5);
-  var box6 = new THREE.Mesh(geometry, material);
+  var box6 = new THREE.Mesh(geometry, material1);
   box6.position.set(-3.7,3.1,-1);
     
   // 箱を作成
