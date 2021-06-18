@@ -21,7 +21,9 @@
     // レンダラーを作成
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize(width, height);
+    renderer.setClearColor(0xeeeeff);
     document.body.appendChild(renderer.domElement);
+   
   
     // シーンを作成
     var scene = new THREE.Scene();
