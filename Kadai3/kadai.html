@@ -168,12 +168,12 @@ var materials7 = [
     
   // テクスチャー読み込み
         var textureLoader = new THREE.TextureLoader();  
-        var texture0 = textureLoader.load("img/sky.png");
-        var mat0 = new THREE.MeshLambertMaterial({transparent: true});
-        mat0.map = texture0;
+        var texture1 = textureLoader.load("img/sky.png");
+        var mat1 = new THREE.MeshLambertMaterial({transparent: true});
+        mat1.map = texture1;
 
         var geometry = new THREE.PlaneGeometry(6, 20);
-        var sky = new THREE.Mesh(geometry, mat0);
+        var sky = new THREE.Mesh(geometry, mat1);
         sky.position.set(-2,0,-2.5);
 
  //全体のオブジェクト
