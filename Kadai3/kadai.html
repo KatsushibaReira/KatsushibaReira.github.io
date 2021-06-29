@@ -39,25 +39,27 @@
     // カメラコントローラーを作成
     const controls = new THREE.OrbitControls(camera,document.body);
     
-    // マテリアルを作成する
-    const material = new THREE.SpriteMaterial({
-    map: new THREE.TextureLoader().load('img/star.png')
-    });
-    
-    VolumetricFire.texturePath = './textures/';
-        var fireWidth  = 100;
-        var fireHeight = 400;
-        var fireDepth  = 100;
-        var sliceSpacing = 10;
+    var axisHelper = new THREE.AxisHelper( 5 );
+scene.add( axisHelper );
 
-        var fire = new VolumetricFire(
-          fireWidth,
-          fireHeight,
-          fireDepth,
-          sliceSpacing,
-          camera
-        );
-        scene.add( fire.mesh );
+
+var fireWidth  = 2;
+var fireHeight = 4;
+var fireDepth  = 2;
+var sliceSpacing = 0.5;
+
+var fire = new VolumetricFire(
+  fireWidth,
+  fireHeight,
+  fireDepth,
+  sliceSpacing,
+  camera
+);
+scene.add( fire.mesh );
+// you can set position, rotation and scale
+// fire.mesh accepts THREE.mesh features
+fire.mesh.position.set( 0, fireHeight / 2, 0 );
+    
 
 //6面分のテクスチャー読み込み
 var materials1 = [
@@ -247,6 +249,8 @@ var materials7 = [
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(tick);
+          fire.update( elapsed );
+          
         }
 }
   window.addEventListener('DOMContentLoaded', init);
