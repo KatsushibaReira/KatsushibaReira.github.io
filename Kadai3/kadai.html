@@ -9,7 +9,6 @@
   <!-- three.jsを読み込む(CDN) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
   <script src="OrbitControls.js"></script>
-  <script src="VolumetricFire.js"></script>
 </head>
 <body>
  <script>
@@ -39,66 +38,43 @@
     // カメラコントローラーを作成
     const controls = new THREE.OrbitControls(camera,document.body);
     
-    var axisHelper = new THREE.AxisHelper( 5 );
-scene.add( axisHelper );
-
-
-var fireWidth  = 2;
-var fireHeight = 4;
-var fireDepth  = 2;
-var sliceSpacing = 0.5;
-
-var fire = new VolumetricFire(
-  fireWidth,
-  fireHeight,
-  fireDepth,
-  sliceSpacing,
-  camera
-);
-scene.add( fire.mesh );
-// you can set position, rotation and scale
-// fire.mesh accepts THREE.mesh features
-fire.mesh.position.set( 0, fireHeight / 2, 0 );
+    //6面分のテクスチャー読み込み
+    var materials1 = [
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bsl2.png")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bsr2.png")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/billue1.png")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/い.jpeg")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bf2.png")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bb2.png")}),
+    ];
+    var material1 = new THREE.MeshFaceMaterial(materials1); // マテリアルをセット
     
-
-//6面分のテクスチャー読み込み
-var materials1 = [
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bsl2.png")}),
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bsr2.png")}),
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/billue1.png")}),
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/い.jpeg")}),
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bf2.png")}),
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img_bb2.png")}),
-  ];
- 
-   var material1 = new THREE.MeshFaceMaterial(materials1); // マテリアルをセット
-    
- //6面分のテクスチャー読み込み
-var materials2 = [
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill6.png")}),
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill6.png")}),
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/billue4.png")}),
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/ら.jpeg")}),
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill6.png")}),
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill6.png")}),
-  ];
+    //6面分のテクスチャー読み込み
+    var materials2 = [
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill6.png")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill6.png")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/billue4.png")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/ら.jpeg")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill6.png")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill6.png")}),
+    ];
     
     var material2 = new THREE.MeshFaceMaterial(materials2); // マテリアルをセット
     
   //6面分のテクスチャー読み込み
-var materials3 = [
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill1.png")}),
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill1.png")}),
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/billue6.png")}),
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/か.jpeg")}),
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill1.png")}),
-     new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill1.png")}),
-  ];
+    var materials3 = [
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill1.png")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill1.png")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/billue6.png")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/か.jpeg")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill1.png")}),
+      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill1.png")}),
+    ];
  
    var material3 = new THREE.MeshFaceMaterial(materials3); // マテリアルをセット
     
   //6面分のテクスチャー読み込み
-var materials4 = [
+    var materials4 = [
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill2.png")}),
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill2.png")}),
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/billue2.png")}),
@@ -110,7 +86,7 @@ var materials4 = [
    var material4 = new THREE.MeshFaceMaterial(materials4); // マテリアルをセット
     
   //6面分のテクスチャー読み込み
-var materials5 = [
+    var materials5 = [
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill3.png")}),
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill3.png")}),
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/billue3.png")}),
@@ -122,7 +98,7 @@ var materials5 = [
    var material5 = new THREE.MeshFaceMaterial(materials5); // マテリアルをセット
   
   //6面分のテクスチャー読み込み
-var materials6 = [
+    var materials6 = [
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill5.png")}),
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill5.png")}),
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/billue7.png")}),
@@ -134,7 +110,7 @@ var materials6 = [
    var material6 = new THREE.MeshFaceMaterial(materials6); // マテリアルをセット
     
   //6面分のテクスチャー読み込み
-var materials7 = [
+    var materials7 = [
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill7.png")}),
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/bill7.png")}),
      new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/billue5.png")}),
@@ -231,7 +207,6 @@ var materials7 = [
   directionalLight3.position.set(1, -10, 1);
   // シーンに追加
   scene.add(directionalLight3);
-  //平行光源4
 
   // 初回実行
   var update = function() {
@@ -249,8 +224,6 @@ var materials7 = [
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(tick);
-          fire.update( elapsed );
-          
         }
 }
   window.addEventListener('DOMContentLoaded', init);
